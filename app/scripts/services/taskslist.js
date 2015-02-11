@@ -31,15 +31,16 @@ var tasksList = function () {
 	this.populateInitialData();
 };
 
-tasksList.prototype.addTask = function (task, assignee, dueDate) {
+tasksList.prototype.add = function (task) {
+	this.data.push(task);
 	this.persistCurrentState();
 };
 
-tasksList.prototype.deleteTask = function (id) {
-	this.persistCurrentState();
+tasksList.prototype.deleteTask = function (index) {
+	throw 'Not implamented yet. ' + index;
 };
 
-tasksList.prototype.editTask = function (id, task, assignee, dueDate) {
+tasksList.prototype.editTask = function (index, task) {
 	this.persistCurrentState();
 };
 

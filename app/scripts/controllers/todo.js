@@ -8,11 +8,15 @@
  * Controller of the tododeskApp
  */
 angular.module('tododeskApp')
-  .controller('TodoCtrl', function ($scope, tasksList) {
+  .controller('TodoCtrl', function ($scope, $location, tasksList) {
     $scope.todoTasks = tasksList.data;
     $scope.predicate = 'dueDate';
 
 	$scope.$watch('todoTasks', function() {
 		tasksList.persistCurrentState();
 	}, true);
+
+	$scope.gotoAddTask = function () {
+		$location.path('crud');
+	};
   });

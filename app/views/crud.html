@@ -1,0 +1,5 @@
+<label>Description: <input type="text" ng-model="task.description"></label><br>
+<label>Due date: <input type="date" ng-model="task.dueDate"></label><br>
+<label>Assignee: <select ng-options="o for o in assignees" ng-model="task.assignee"></select></label>
+<br>
+<button ng-click="addTask()">Add The Task</button>

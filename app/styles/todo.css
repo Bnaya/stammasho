@@ -2,7 +2,7 @@
 	list-style: none;
 }
 
-.tasks-list.done {
+.tasks-list.done label {
 	text-decoration: line-through;
 }
 
