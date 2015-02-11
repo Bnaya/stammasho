@@ -18,15 +18,18 @@ angular
     'ngTouch'
   ])
   .config(function ($routeProvider) {
+    var todo = {
+        templateUrl: 'views/todo.html',
+        controller: 'TodoCtrl'
+    };
+
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
+      .when('/', todo)
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/todo', todo)
       .otherwise({
         redirectTo: '/'
       });
