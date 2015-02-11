@@ -19,4 +19,8 @@ angular.module('tododeskApp')
 	$scope.gotoAddTask = function () {
 		$location.path('crud');
 	};
+
+	$scope.gotoEditTask = function (taskIndex) {
+		$location.path('crud/' + taskIndex);
+	};
   });

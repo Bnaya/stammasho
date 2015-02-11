@@ -8,17 +8,30 @@
  * Controller of the tododeskApp
  */
 angular.module('tododeskApp')
-  .controller('CrudCtrl', function ($scope, $location, assignees, tasksList) {
+  .controller('CrudCtrl', function ($routeParams, $scope, $location, assignees, tasksList) {
+  	console.log($routeParams);
+
     $scope.assignees = assignees.list;
-    $scope.task = {
-    	description: '',
-    	assignee: '',
-    	dueDate: '',
-    	completed: false
-    };
+
+  	if ($routeParams.id) {
+  		$scope.editMode = true;
+  		$scope.task = tasksList.data[$routeParams.id];
+  	} else {
+	    $scope.task = {
+	    	description: '',
+	    	assignee: '',
+	    	dueDate: new Date(),
+	    	completed: false
+	    };
+  	}
 
     $scope.addTask = function () {
 		tasksList.add($scope.task);
-		$location.path('/')
+		$location.path('/');
+    };
+
+    $scope.saveChanges = function () {
+		tasksList.update($routeParams.id, $scope.task);
+		$location.path('/');
     };
   });

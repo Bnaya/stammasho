@@ -1,18 +1,18 @@
 <div class="list-wrapper">
 	<h3 class="list-title">Tasks to complete</h3>
 	<ul class="tasks-list todo">
-		<li ng-repeat="task in todoTasks | filter:{completed:false} | orderBy:predicate:true">
-		<label><input type="checkbox" ng-model="task.completed">
-		{{task.description}} ({{task.assignee}}) {{task.dueDate | date:'yyyy-MM-dd'}}</label>
+		<li ng-repeat="task in todoTasks | filter:{completed:false} | orderBy:predicate:true" ng-click="gotoEditTask($index)">
+		<input type="checkbox" ng-model="task.completed">
+		{{task.description}} ({{task.assignee}}) {{task.dueDate | date:'yyyy-MM-dd'}}
 		</li>
 	</ul>
 </div>
 <div class="list-wrapper">
 	<h3 class="list-title">Completed tasks</h3>
 	<ul class="tasks-list done">
-		<li ng-repeat="task in todoTasks | filter:{completed:true} | orderBy:predicate:true">
-			<label><input type="checkbox" ng-model="task.completed">
-			{{task.description}} ({{task.assignee}}) {{task.dueDate | date:'yyyy-MM-dd'}}</label>
+		<li ng-repeat="task in todoTasks | filter:{completed:true} | orderBy:predicate:true" ng-click="gotoEditTask($index)">
+			<input type="checkbox" ng-model="task.completed">
+			{{task.description}} ({{task.assignee}}) {{task.dueDate | date:'yyyy-MM-dd'}}
 		</li>
 	</ul>
 </div>

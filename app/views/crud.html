@@ -2,4 +2,5 @@
 <label>Due date: <input type="date" ng-model="task.dueDate"></label><br>
 <label>Assignee: <select ng-options="o for o in assignees" ng-model="task.assignee"></select></label>
 <br>
-<button ng-click="addTask()">Add The Task</button>
+<button ng-click="addTask()" ng-if="!editMode">Add The Task</button>
+<button ng-click="saveChanges()" ng-if="editMode">Save Changes</button>

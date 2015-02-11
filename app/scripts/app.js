@@ -30,10 +30,10 @@ angular
         controller: 'AboutCtrl'
       })
       .when('/todo', todo)
-      .when('/crud', {
+      .when('/crud/:id?', {
         templateUrl: 'views/crud.html',
         controller: 'CrudCtrl'
-      })
+      })      
       .otherwise({
         redirectTo: '/'
       });

@@ -36,11 +36,12 @@ tasksList.prototype.add = function (task) {
 	this.persistCurrentState();
 };
 
-tasksList.prototype.deleteTask = function (index) {
+tasksList.prototype.delete = function (index) {
 	throw 'Not implamented yet. ' + index;
 };
 
-tasksList.prototype.editTask = function (index, task) {
+tasksList.prototype.update = function (index, task) {
+	this.data[index] = task;
 	this.persistCurrentState();
 };
 
