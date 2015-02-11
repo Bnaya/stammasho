@@ -8,20 +8,8 @@
  * Controller of the tododeskApp
  */
 angular.module('tododeskApp')
-  .controller('TodoCtrl', function ($scope) {
-    $scope.todoTasks = [
-      {
-      	task: 'Get more spice',
-      	dueDate: 1,
-      	assignee: 'Vladimir harkonnen'
-      }
-    ];
-
-    $scope.doneTasks = [
-      {
-      	task: 'Be fat',
-      	dueDate: 1,
-      	assignee: 'Vladimir harkonnen'
-      }
-    ];
+  .controller('TodoCtrl', function ($scope, tasksList) {
+    $scope.todoTasks = tasksList.data.todoTasks;
+    $scope.doneTasks = tasksList.data.doneTasks;
+    $scope.predicate = 'dueDate';
   });
