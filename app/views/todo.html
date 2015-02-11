@@ -1,12 +1,18 @@
 <div class="list-wrapper">
 	<h3 class="list-title">Tasks to complete</h3>
 	<ul class="tasks-list todo">
-		<li ng-repeat="task in todoTasks | orderBy:predicate">{{task.task}} ({{task.assignee}}) {{task.dueDate}}</li>
+		<li ng-repeat="task in todoTasks | filter:{completed:false} | orderBy:predicate:true">
+		<label><input type="checkbox" ng-model="task.completed">
+		{{task.description}} ({{task.assignee}}) {{task.dueDate | date:'yyyy-MM-dd'}}</label>
+		</li>
 	</ul>
 </div>
 <div class="list-wrapper">
 	<h3 class="list-title">Completed tasts</h3>
 	<ul class="tasks-list done">
-		<li ng-repeat="task in doneTasks | orderBy:predicate">{{task.task}} ({{task.assignee}}) {{task.dueDate}}</li>
+		<li ng-repeat="task in todoTasks | filter:{completed:true} | orderBy:predicate:true">
+			<label><input type="checkbox" ng-model="task.completed">
+			{{task.description}} ({{task.assignee}}) {{task.dueDate | date:'yyyy-MM-dd'}}</label>
+		</li>
 	</ul>
 </div>

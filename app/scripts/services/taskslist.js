@@ -8,26 +8,24 @@
  * Service in the tododeskApp.
  */
 
-var seedData = {
-	todoTasks: [{
-      	task: 'do me',
-      	dueDate: 10,
-      	assignee: 'none dooer'
+var seedData = [
+		{
+      	description: 'do me',
+      	dueDate: 9999999999,
+      	assignee: 'none dooer',
+      	completed: false
 	}, {
-      	task: 'do me 2',
+      	description: 'do me 2',
       	dueDate: 3,
-      	assignee: 'none dooer 2'
+      	assignee: 'none dooer 2',
+      	completed: false
 	}, {
-      	task: 'do me 3',
-      	dueDate: 5,
-      	assignee: 'none dooer 3'
-	}],
-	doneTasks: [{
-      	task: 'im done',
-      	dueDate: 1,
-      	assignee: 'dooer'
-	}]
-};
+      	description: 'do me 3',
+      	dueDate: 999999999,
+      	assignee: 'none dooer 3',
+      	completed: true
+	}
+];
 
 var tasksList = function () {
 	this.populateInitialData();

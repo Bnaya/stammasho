@@ -2,6 +2,10 @@
 	list-style: none;
 }
 
+.tasks-list.done {
+	text-decoration: line-through;
+}
+
 .list-wrapper {
 	border: 1px #000 solid;
 }

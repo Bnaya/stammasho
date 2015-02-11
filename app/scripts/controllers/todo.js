@@ -9,7 +9,10 @@
  */
 angular.module('tododeskApp')
   .controller('TodoCtrl', function ($scope, tasksList) {
-    $scope.todoTasks = tasksList.data.todoTasks;
-    $scope.doneTasks = tasksList.data.doneTasks;
+    $scope.todoTasks = tasksList.data;
     $scope.predicate = 'dueDate';
+
+	$scope.$watch('todoTasks', function() {
+		tasksList.persistCurrentState();
+	}, true);
   });
